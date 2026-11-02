@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "דיווח פעילויות לטיפולוג",
+  "short_name": "דיווח לטיפולוג",
+  "version": "0.2.0",
+  "description": "ממלא בטיפולוג את דיווחי הפעילויות של המנהלת מתוך קובץ CSV, שורה אחרי שורה, ומוריד קובץ פלט עם הסטטוס.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://app.cliniclicks.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "דיווח לטיפולוג",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

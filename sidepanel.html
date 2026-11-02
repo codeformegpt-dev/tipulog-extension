@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>דיווח לטיפולוג</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="top">
+    <h1>דיווח לטיפולוג</h1>
+    <div id="tabState" class="tab-state"></div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <section class="card">
+    <div class="file-row">
+      <label class="btn" id="fileBtn">בחר קובץ CSV
+        <input type="file" id="file" accept=".csv,text/csv" hidden>
+      </label>
+      <span id="fileName" class="muted"></span>
+    </div>
+    <div id="counts" class="counts"></div>
+  </section>
+
+  <section class="card">
+    <div class="controls">
+      <button id="start" class="btn primary" title="מטפל בכל השורות הממתינות, אחת אחרי השנייה">התחל</button>
+      <button id="next" class="btn" title="מטפל בשורה אחת ועוצר">הבא</button>
+      <button id="skip" class="btn" title="מדלג על השורה שבטיפול">דלג</button>
+      <button id="stop" class="btn" title="עוצר את הריצה">עצור</button>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="autoSave">
+      <span class="track"><span class="knob"></span></span>
+      <span>שמירה אוטומטית</span>
+    </label>
+    <div id="autoSaveHint" class="hint"></div>
+    <div id="status" class="status"></div>
+  </section>
+
+  <section class="card rows-card">
+    <div class="rows-head">
+      <strong>שורות</strong>
+      <select id="filter" aria-label="סינון">
+        <option value="all">הכול</option>
+        <option value="ready">ממתינות</option>
+        <option value="problems">בעיות וכפולות</option>
+        <option value="done">דווחו</option>
+        <option value="notReady">לא מוכנות</option>
+      </select>
+    </div>
+    <div id="rows" class="rows"></div>
+  </section>
+
+  <details class="card" id="logBox">
+    <summary>יומן</summary>
+    <ol id="log" class="log"></ol>
+  </details>
+
+  <footer class="footer">
+    <button id="export" class="btn">הורד קובץ פלט</button>
+    <button id="reset" class="btn danger" title="מוחק את כל הנתונים מהתוסף">איפוס</button>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="csv.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
